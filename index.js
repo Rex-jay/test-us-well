@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 
 app.post('/post', (req, res) => {
     const { info } = req.body;
-    res.send('Data sent', info);
+    res.send( `You sent ${info}` );
 })
 
 app.listen(3000, () => {
