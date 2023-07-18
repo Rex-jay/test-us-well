@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
+app.use(express.urlencoded({ extended: true }));
+
 app.use = (express.json());
 
 app.get('/', (req, res) => {
@@ -8,8 +10,8 @@ app.get('/', (req, res) => {
 });
 
 app.post('/post', (req, res) => {
-    const { info } = req.body;
-    res.send( `You sent ${info}` );
+    const { code } = req.body;
+    res.send( `You sent ${code}` );
 })
 
 app.listen(3000, () => {
